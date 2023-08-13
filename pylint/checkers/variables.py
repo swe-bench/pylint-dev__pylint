@@ -738,7 +738,7 @@ scope_type : {self._atomic.scope_type}
 
         # Only search else branch when test condition is inferred to be false
         if all_inferred and only_search_else:
-            self.names_under_always_false_test.add(node.name)
+            self.names_under_always_false_test.add(name)
             return self._branch_handles_name(name, node.orelse)
         # Search both if and else branches
         return self._branch_handles_name(name, node.body) and self._branch_handles_name(
